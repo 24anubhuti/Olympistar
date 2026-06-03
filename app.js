@@ -131,7 +131,7 @@ function calculateNewStreak(lastDate, currentStreak, todayStr) {
 // ── Progress calculator ────────────────────────────────────
 function getProgressPercentage(subject) {
   const topics  = Object.keys(QUESTION_BANK[subject]);
-  const maxStars = topics.length * CONFIG.quizQuestionCount;  // 5 per topic
+  const maxStars = topics.length * CONFIG.quizQuestionCount;  // 20 per topic
   const earned   = topics.reduce(
     (sum, t) => sum + (state.starRatings[subject + '/' + t] || 0), 0
   );
@@ -166,11 +166,11 @@ function selectMockQuestions(subject) {
 }
 
 // ── Encouragement message selector ────────────────────────
-// Req 7.2: top for 5, mid for 3-4, low for 0-2
+// Req 7.2: top for 20, mid for 15-16, low for 5-6
 function getEncouragementMessage(score) {
   let band;
-  if (score === 5)     band = CONFIG.encouragement.top;
-  else if (score >= 3) band = CONFIG.encouragement.mid;
+  if (score === 20)     band = CONFIG.encouragement.top;
+  else if (score >= 15) band = CONFIG.encouragement.mid;
   else                 band = CONFIG.encouragement.low;
   return band[Math.floor(Math.random() * band.length)];
 }
@@ -217,8 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Req 4.2: returns a string of ⭐ (filled) and ☆ (empty) chars
 // e.g. renderStars(3) → "⭐⭐⭐☆☆"
 function renderStars(rating) {
-  const filled = '⭐'.repeat(rating);
-  const empty  = '☆'.repeat(5 - rating);
+const safeRating = Math.max(0, Math.min(5, Math.round(rating)));  
+const filled = '⭐'.repeat(safeRating);
+  const empty  = '☆'.repeat(5 - safeRating);
   return filled + empty;
 }
 
@@ -677,7 +678,7 @@ function advanceQuiz() {
  * showQuizResults()
  * Saves progress first (star rating, badge, streak, localStorage), then
  * navigates to the Quiz Results screen and populates all result elements:
- *  - Score line: "You got N out of 5! 🌟"
+ *  - Score line: "You got N out of 20! 🌟"
  *  - Encouragement message from the correct score band
  *  - Updated Star_Rating rendered as filled/empty stars (after max logic)
  *  - Updated Badge label; "🥇 Gold Badge Earned!" style label on upgrade
@@ -698,7 +699,7 @@ function showQuizResults() {
   // ── 2. Score display (Req 7.1) ────────────────────────────
   const scoreEl = document.getElementById('quiz-results-score');
   if (scoreEl) {
-    scoreEl.textContent = 'You got ' + state.quizScore + ' out of 5! 🌟';
+    scoreEl.textContent = 'You got ' + state.quizScore + ' out of 20! 🌟';
   }
 
   // ── 3. Encouragement message (Req 7.2) ───────────────────

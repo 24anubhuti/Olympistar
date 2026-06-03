@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OlympiStar 🌟 — Olympiad Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 1: HOME
+       Shown on load; all other screens start hidden.
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-home" class="screen">
+    <header class="app-header">
+      <h1 class="app-title">🌟 OlympiStar</h1>
+      <p class="app-subtitle">Olympiad Practice for Class 4</p>
+    </header>
+
+    <!-- Streak display -->
+    <div class="streak-display" aria-label="Current practice streak">
+      <span id="streak-count">0</span>
+      <span class="streak-label"> Day Streak 🔥</span>
+    </div>
+
+    <!-- Subject cards grid — populated dynamically by app.js -->
+    <main>
+      <h2 class="section-heading">Choose a Subject</h2>
+      <div id="subject-cards" class="cards-grid" role="list" aria-label="Subject list">
+        <!-- Subject cards injected by app.js -->
+      </div>
+    </main>
+
+    <!-- Reset progress -->
+    <footer class="home-footer">
+      <button
+        id="btn-reset-progress"
+        class="btn btn-secondary"
+        aria-label="Reset all progress data"
+        style="min-width:44px; min-height:44px;"
+      >
+        🗑️ Reset Progress
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 2: TOPIC SELECTION
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-topics" class="screen" hidden>
+    <header class="screen-header">
+      <button
+        id="btn-topics-back"
+        class="btn btn-back"
+        aria-label="Back to Home Screen"
+        style="min-width:44px; min-height:44px;"
+      >
+        ← Back
+      </button>
+      <!-- Subject heading injected by app.js -->
+      <h2 id="topics-subject-heading" class="subject-heading"></h2>
+    </header>
+
+    <!-- Topic cards — populated dynamically by app.js -->
+    <main>
+      <div id="topic-cards" class="cards-grid" role="list" aria-label="Topic list">
+        <!-- Topic cards injected by app.js -->
+      </div>
+    </main>
+
+    <footer class="topics-footer">
+      <button
+        id="btn-mock-test"
+        class="btn btn-primary btn-mock"
+        aria-label="Start Mock Test for this subject"
+        style="min-width:44px; min-height:44px;"
+      >
+        📝 Mock Test
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 3: QUIZ
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-quiz" class="screen" hidden>
+    <header class="screen-header quiz-header">
+      <!-- No Back button during active quiz (Requirement 6.11) -->
+      <p id="quiz-question-number" class="question-number" aria-live="polite">Question 1 of 5</p>
+    </header>
+
+    <main class="quiz-main">
+      <!-- Question text -->
+      <div class="question-card">
+        <p id="quiz-question-text" class="question-text" aria-live="polite"></p>
+      </div>
+
+      <!-- Option buttons A–D -->
+      <div id="quiz-options" class="options-grid" role="group" aria-label="Answer options">
+        <button
+          id="quiz-option-0"
+          class="btn btn-option"
+          aria-label="Option A"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">A</span>
+          <span class="option-text" id="quiz-option-text-0"></span>
+        </button>
+        <button
+          id="quiz-option-1"
+          class="btn btn-option"
+          aria-label="Option B"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">B</span>
+          <span class="option-text" id="quiz-option-text-1"></span>
+        </button>
+        <button
+          id="quiz-option-2"
+          class="btn btn-option"
+          aria-label="Option C"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">C</span>
+          <span class="option-text" id="quiz-option-text-2"></span>
+        </button>
+        <button
+          id="quiz-option-3"
+          class="btn btn-option"
+          aria-label="Option D"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">D</span>
+          <span class="option-text" id="quiz-option-text-3"></span>
+        </button>
+      </div>
+
+      <!-- Explanation area — hidden until an option is selected -->
+      <div id="quiz-explanation" class="explanation-box" hidden aria-live="polite">
+        <p id="quiz-explanation-text"></p>
+      </div>
+    </main>
+
+    <footer class="quiz-footer">
+      <!-- "Next" changes to "See Results" on the final question -->
+      <button
+        id="btn-quiz-next"
+        class="btn btn-primary"
+        hidden
+        aria-label="Go to next question"
+        style="min-width:44px; min-height:44px;"
+      >
+        Next ➡️
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 4: QUIZ RESULTS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-quiz-results" class="screen" hidden>
+    <main class="results-main">
+      <h2 class="results-heading">Quiz Complete! 🎉</h2>
+
+      <!-- Score display -->
+      <p id="quiz-results-score" class="score-display" aria-live="polite">You got 0 out of 5! 🌟</p>
+
+      <!-- Encouragement message -->
+      <p id="quiz-results-encouragement" class="encouragement-message" aria-live="polite"></p>
+
+      <!-- Star rating display -->
+      <div class="star-rating-display" aria-label="Your star rating for this topic">
+        <p id="quiz-results-stars" class="stars-display"></p>
+      </div>
+
+      <!-- Badge display — shown only when a badge has been earned -->
+      <div id="quiz-results-badge" class="badge-display" aria-live="polite">
+        <!-- Badge label injected by app.js, e.g. "🥇 Gold Badge Earned!" -->
+      </div>
+    </main>
+
+    <footer class="results-footer">
+      <button
+        id="btn-quiz-try-again"
+        class="btn btn-primary"
+        aria-label="Try this quiz again"
+        style="min-width:44px; min-height:44px;"
+      >
+        🔄 Try Again
+      </button>
+      <button
+        id="btn-quiz-choose-topic"
+        class="btn btn-secondary"
+        aria-label="Choose another topic"
+        style="min-width:44px; min-height:44px;"
+      >
+        📚 Choose Another Topic
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 5: MOCK TEST
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-mock" class="screen" hidden>
+    <header class="screen-header mock-header">
+      <!-- Timer display -->
+      <div class="timer-display" aria-label="Time remaining" aria-live="polite">
+        ⏱️ <span id="mock-timer">60:00</span>
+      </div>
+      <p id="mock-question-number" class="question-number">Question 1 of 35</p>
+    </header>
+
+    <main class="quiz-main">
+      <!-- Question text -->
+      <div class="question-card">
+        <p id="mock-question-text" class="question-text" aria-live="polite"></p>
+      </div>
+
+      <!-- Option buttons A–D -->
+      <div id="mock-options" class="options-grid" role="group" aria-label="Answer options">
+        <button
+          id="mock-option-0"
+          class="btn btn-option"
+          aria-label="Option A"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">A</span>
+          <span class="option-text" id="mock-option-text-0"></span>
+        </button>
+        <button
+          id="mock-option-1"
+          class="btn btn-option"
+          aria-label="Option B"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">B</span>
+          <span class="option-text" id="mock-option-text-1"></span>
+        </button>
+        <button
+          id="mock-option-2"
+          class="btn btn-option"
+          aria-label="Option C"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">C</span>
+          <span class="option-text" id="mock-option-text-2"></span>
+        </button>
+        <button
+          id="mock-option-3"
+          class="btn btn-option"
+          aria-label="Option D"
+          style="min-width:44px; min-height:44px;"
+        >
+          <span class="option-label">D</span>
+          <span class="option-text" id="mock-option-text-3"></span>
+        </button>
+      </div>
+
+      <!-- Explanation area — hidden until an option is selected -->
+      <div id="mock-explanation" class="explanation-box" hidden aria-live="polite">
+        <p id="mock-explanation-text"></p>
+      </div>
+    </main>
+
+    <footer class="mock-footer">
+      <button
+        id="btn-mock-next"
+        class="btn btn-primary"
+        aria-label="Go to next mock test question"
+        style="min-width:44px; min-height:44px;"
+      >
+        Next ➡️
+      </button>
+      <button
+        id="btn-mock-end-early"
+        class="btn btn-secondary"
+        aria-label="End mock test early and see results"
+        style="min-width:44px; min-height:44px;"
+      >
+        🏁 End Test Early
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCREEN 6: MOCK TEST RESULTS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="screen-mock-results" class="screen" hidden>
+    <main class="results-main">
+      <h2 class="results-heading">Mock Test Complete! 📝</h2>
+
+      <!-- Score display -->
+      <p id="mock-results-score" class="score-display" aria-live="polite">Score: 0 / 35</p>
+
+      <!-- Percentage display -->
+      <p id="mock-results-percentage" class="percentage-display" aria-live="polite">0.0%</p>
+
+      <!-- Performance message -->
+      <p id="mock-results-message" class="performance-message" aria-live="polite"></p>
+    </main>
+
+    <footer class="results-footer">
+      <button
+        id="btn-mock-home"
+        class="btn btn-primary"
+        aria-label="Back to Home Screen"
+        style="min-width:44px; min-height:44px;"
+      >
+        🏠 Back to Home
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CELEBRATION OVERLAY
+       Injected with confetti <span> elements by app.js on badge upgrade.
+  ════════════════════════════════════════════════════════════ -->
+  <div id="celebration-overlay" aria-hidden="true"></div>
+
+
+  <!-- Script loading order: questions.js first, then app.js -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

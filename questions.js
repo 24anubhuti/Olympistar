@@ -12,20 +12,20 @@ const QUESTION_BANK = {
     'Patterns': [
       {
         text: 'Which shape comes next in the pattern: ○ △ ○ △ ○ ?',
-        options: ['○', '△', '□', '◇'],
-        correct: 1,
+        options: ['○', '□', '◇', '△'],
+        correct: 3,
         explanation: 'The pattern alternates circle and triangle, so triangle (△) comes next.'
       },
       {
         text: 'What comes next in the pattern: 2, 4, 6, 8, ?',
-        options: ['9', '10', '11', '12'],
-        correct: 1,
+        options: ['10', '9', '11', '12'],
+        correct: 0,
         explanation: 'Each number increases by 2. After 8 comes 10.'
       },
       {
         text: 'Which colour comes next: Red, Blue, Red, Blue, Red, ?',
-        options: ['Red', 'Blue', 'Green', 'Yellow'],
-        correct: 1,
+        options: ['Blue', 'Red', 'Green', 'Yellow'],
+        correct: 0,
         explanation: 'The pattern alternates Red and Blue, so Blue comes next.'
       },
       {
@@ -60,8 +60,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the pattern: 10, 20, 30, 40, ?',
-        options: ['45', '50', '55', '60'],
-        correct: 1,
+        options: ['45', '55', '50', '60'],
+        correct: 2,
         explanation: 'Each number increases by 10. After 40 comes 50.'
       },
       {
@@ -72,8 +72,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the next number: 5, 10, 15, 20, ?',
-        options: ['22', '25', '30', '24'],
-        correct: 1,
+        options: ['25', '22', '30', '24'],
+        correct: 0,
         explanation: 'Each number increases by 5. After 20 comes 25.'
       },
       {
@@ -96,8 +96,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the next: 100, 95, 90, 85, ?',
-        options: ['75', '80', '70', '82'],
-        correct: 1,
+        options: ['75', '83', '70', '80'],
+        correct: 3,
         explanation: 'Each number decreases by 5. After 85 comes 80.'
       },
       {
@@ -165,8 +165,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the missing number: 7, 14, 21, __, 35',
-        options: ['24', '25', '28', '30'],
-        correct: 2,
+        options: ['28', '25', '24', '30'],
+        correct: 0,
         explanation: 'The series increases by 7 each time. After 21 comes 28.'
       },
       {
@@ -177,8 +177,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the missing number: 1, 2, 4, 7, 11, __',
-        options: ['14', '15', '16', '17'],
-        correct: 2,
+        options: ['14', '16', '15', '17'],
+        correct: 1,
         explanation: 'The differences increase by 1: +1, +2, +3, +4, +5. So 11 + 5 = 16.'
       },
       {
@@ -195,8 +195,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the missing number: 4, 9, 16, 25, __',
-        options: ['30', '36', '49', '35'],
-        correct: 1,
+        options: ['30', '35', '49', '36'],
+        correct: 3,
         explanation: 'These are perfect squares: 2²=4, 3²=9, 4²=16, 5²=25, 6²=36.'
       },
       {
@@ -258,8 +258,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Fish is to Water as Bird is to ?',
-        options: ['Tree', 'Sky', 'Nest', 'Cage'],
-        correct: 1,
+        options: ['Tree', 'Cage', 'Nest', 'Sky'],
+        correct: 3,
         explanation: 'Fish live in water. Birds live in the sky (air).'
       },
       {
@@ -270,20 +270,20 @@ const QUESTION_BANK = {
       },
       {
         text: 'Doctor is to Hospital as Teacher is to ?',
-        options: ['Library', 'School', 'Office', 'Market'],
-        correct: 1,
+        options: ['Library', 'Market', 'Office', 'School'],
+        correct: 3,
         explanation: 'A doctor works in a hospital. A teacher works in a school.'
       },
       {
         text: 'Ear is to Hear as Eye is to ?',
-        options: ['Smell', 'See', 'Touch', 'Taste'],
-        correct: 1,
+        options: ['See', 'Smell', 'Touch', 'Taste'],
+        correct: 0,
         explanation: 'Ears are used to hear. Eyes are used to see.'
       },
       {
         text: 'Cow is to Calf as Horse is to ?',
-        options: ['Pony', 'Foal', 'Cub', 'Lamb'],
-        correct: 1,
+        options: ['Pony', 'Cub', 'Foal', 'Lamb'],
+        correct: 2,
         explanation: 'A baby cow is a calf. A baby horse is a foal.'
       },
       {
@@ -294,8 +294,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Pilot is to Plane as Captain is to ?',
-        options: ['Car', 'Ship', 'Train', 'Bus'],
-        correct: 1,
+        options: ['Car', 'Bus', 'Train', 'Ship'],
+        correct: 3,
         explanation: 'A pilot flies a plane. A captain commands a ship.'
       },
       {
@@ -306,8 +306,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Knife is to Cut as Needle is to ?',
-        options: ['Poke', 'Sew', 'Thread', 'Stitch'],
-        correct: 1,
+        options: ['Poke', 'Stitch', 'Thread', 'Sew'],
+        correct: 3,
         explanation: 'A knife is used to cut. A needle is used to sew.'
       },
       {
@@ -318,14 +318,14 @@ const QUESTION_BANK = {
       },
       {
         text: 'Painter is to Brush as Writer is to ?',
-        options: ['Book', 'Pen', 'Paper', 'Ink'],
-        correct: 1,
+        options: ['Book', 'Ink', 'Paper', 'Pen'],
+        correct: 3,
         explanation: 'A painter uses a brush. A writer uses a pen.'
       },
       {
         text: 'Ice is to Cold as Fire is to ?',
-        options: ['Smoke', 'Hot', 'Light', 'Ash'],
-        correct: 1,
+        options: ['Hot', 'Smoke', 'Light', 'Ash'],
+        correct: 0,
         explanation: 'Ice is cold. Fire is hot.'
       },
       {
@@ -348,8 +348,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Nose is to Smell as Tongue is to ?',
-        options: ['Eat', 'Taste', 'Lick', 'Speak'],
-        correct: 1,
+        options: ['Eat', 'Lick', 'Taste', 'Speak'],
+        correct: 2,
         explanation: 'Nose is used to smell. Tongue is used to taste.'
       },
       {
@@ -429,8 +429,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which one does NOT belong: Addition, Subtraction, English, Multiplication?',
-        options: ['Addition', 'Subtraction', 'English', 'Multiplication'],
-        correct: 2,
+        options: ['Addition', 'English', 'Subtraction', 'Multiplication'],
+        correct: 1,
         explanation: 'Addition, Subtraction, and Multiplication are math operations. English is a language.'
       },
       {
@@ -447,8 +447,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which one does NOT belong: Mercury, Venus, Moon, Mars?',
-        options: ['Mercury', 'Venus', 'Moon', 'Mars'],
-        correct: 2,
+        options: ['Moon', 'Venus', 'Mercury', 'Mars'],
+        correct: 0,
         explanation: 'Mercury, Venus, and Mars are planets. Moon is a natural satellite.'
       },
       {
@@ -465,8 +465,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which one does NOT belong: Ant, Bee, Spider, Butterfly?',
-        options: ['Ant', 'Bee', 'Spider', 'Butterfly'],
-        correct: 2,
+        options: ['Spider', 'Bee', 'Ant', 'Butterfly'],
+        correct: 0,
         explanation: 'Ant, Bee, and Butterfly are insects (6 legs). Spider is an arachnid (8 legs).'
       },
       {
@@ -492,8 +492,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If 1=A, 2=B, 3=C, what does 3-1-20 stand for?',
-        options: ['CAT', 'BAT', 'CAR', 'CAN'],
-        correct: 0,
+        options: ['CAR', 'BAT', 'CAT', 'CAN'],
+        correct: 2,
         explanation: '3=C, 1=A, 20=T. So 3-1-20 = CAT.'
       },
       {
@@ -504,8 +504,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If SUN is coded as 19-21-14, what is the code for CAT?',
-        options: ['3-1-20', '2-1-20', '3-2-20', '4-1-20'],
-        correct: 0,
+        options: ['3-2-20', '2-1-20', '3-1-20', '4-1-20'],
+        correct: 2,
         explanation: 'Each letter is replaced by its position in the alphabet. C=3, A=1, T=20, so CAT = 3-1-20.'
       },
       {
@@ -522,8 +522,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If TREE is coded as USFF, what is the code for LEAF?',
-        options: ['MFBG', 'MEBG', 'MFCG', 'LFBG'],
-        correct: 0,
+        options: ['MFCG', 'MEBG', 'MFBG', 'LFBG'],
+        correct: 2,
         explanation: 'Each letter moves one step forward: L→M, E→F, A→B, F→G. So LEAF = MFBG.'
       },
       {
@@ -534,8 +534,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If ROSE is coded as SPTF, what is the code for LILY?',
-        options: ['MJMZ', 'MKLY', 'MJLZ', 'NKMZ'],
-        correct: 0,
+        options: ['NKMZ', 'MKLY', 'MJLZ', 'MJMZ'],
+        correct: 3,
         explanation: 'Each letter moves one step forward: L→M, I→J, L→M, Y→Z. So LILY = MJMZ.'
       },
       {
@@ -546,8 +546,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If STAR is coded as 19-20-1-18, what is MOON?',
-        options: ['13-15-15-14', '12-14-14-13', '13-16-16-15', '14-15-15-14'],
-        correct: 0,
+        options: ['12-15-15-14', '13-15-15-14', '13-16-16-15', '14-15-15-14'],
+        correct: 1,
         explanation: 'M=13, O=15, O=15, N=14. So MOON = 13-15-15-14.'
       },
       {
@@ -558,8 +558,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If Z=1, Y=2, X=3... A=26, what is the code for SUN?',
-        options: ['8+6+13=27', '19+21+14=54', '8+6+13=27', '7+5+12=24'],
-        correct: 0,
+        options: ['8+6+14=27', '19+21+14=54', '8+6+13=27', '7+5+12=24'],
+        correct: 2,
         explanation: 'S=8, U=6, N=13 (reverse alphabet). So SUN = 8+6+13 = 27.'
       },
       {
@@ -570,20 +570,20 @@ const QUESTION_BANK = {
       },
       {
         text: 'If RED is coded as 18-5-4, what is BLUE?',
-        options: ['2-12-21-5', '3-13-22-6', '2-11-20-4', '1-12-21-5'],
-        correct: 0,
+        options: ['2-11-21-5', '3-13-22-6', '2-12-21-5', '1-12-21-5'],
+        correct: 2,
         explanation: 'B=2, L=12, U=21, E=5. So BLUE = 2-12-21-5.'
       },
       {
         text: 'If LAMP is coded as MBNQ, what is DESK?',
-        options: ['EFTL', 'EGTL', 'DFTL', 'EFSL'],
+        options: ['EFTS', 'EGTL', 'DFTL', 'EFTL'],
         correct: 0,
         explanation: 'Each letter moves one step forward: D→E, E→F, S→T, K→L. So DESK = EFTL.'
       },
       {
         text: 'If RAIN is coded as SBJO, what is WIND?',
-        options: ['XJOE', 'XKOE', 'WIOE', 'XJNE'],
-        correct: 0,
+        options: ['XKOE', 'XJOE', 'WIOE', 'XJNE'],
+        correct: 1,
         explanation: 'Each letter moves one step forward: W→X, I→J, N→O, D→E. So WIND = XJOE.'
       },
       {
@@ -669,8 +669,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'The mirror image of letter "J" is?',
-        options: ['L', 'J reversed', 'F', 'T'],
-        correct: 1,
+        options: ['J reversed', 'L reversed', 'F', 'T'],
+        correct: 0,
         explanation: 'The mirror image of J is a reversed J (the hook goes the other way).'
       },
       {
@@ -714,8 +714,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'How many triangles are there in a figure made of a big triangle divided into 4 equal smaller triangles?',
-        options: ['4', '5', '6', '3'],
-        correct: 1,
+        options: ['4', '3', '6', '5'],
+        correct: 3,
         explanation: 'There are 4 small triangles plus 1 big triangle = 5 triangles in total.'
       },
       {
@@ -726,8 +726,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A circle is drawn inside a square. Which shape is embedded inside the other?',
-        options: ['Square inside circle', 'Circle inside square', 'They overlap', 'Neither'],
-        correct: 1,
+        options: ['Square inside circle', 'Neither', 'They overlap', 'Circle inside square'],
+        correct: 3,
         explanation: 'The circle is drawn inside the square, so the circle is the embedded figure.'
       },
       {
@@ -738,8 +738,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'How many triangles are in a triangle divided into 2 smaller triangles by one line from top to base?',
-        options: ['2', '3', '4', '1'],
-        correct: 1,
+        options: ['3', '2', '4', '1'],
+        correct: 0,
         explanation: '2 small triangles + 1 big triangle = 3 triangles total.'
       },
       {
@@ -750,8 +750,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A square is divided into 4 equal smaller squares. How many total squares are there?',
-        options: ['4', '5', '6', '8'],
-        correct: 1,
+        options: ['4', '8', '6', '5'],
+        correct: 3,
         explanation: '4 small squares + 1 big square = 5 squares total.'
       },
       {
@@ -849,8 +849,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If you face East and turn left, which direction do you face?',
-        options: ['West', 'North', 'South', 'East'],
-        correct: 1,
+        options: ['West', 'East', 'South', 'North'],
+        correct: 3,
         explanation: 'Turning left from East means you face North.'
       },
       {
@@ -897,8 +897,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Arun faces North. He turns clockwise 90°. Which direction does he face?',
-        options: ['West', 'East', 'South', 'North'],
-        correct: 1,
+        options: ['West', 'South', 'East', 'North'],
+        correct: 2,
         explanation: 'Clockwise 90° from North = East.'
       },
       {
@@ -991,8 +991,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Round 3,467 to the nearest hundred.',
-        options: ['3,400', '3,500', '3,470', '3,000'],
-        correct: 1,
+        options: ['3,400', '3,000', '3,470', '3,500'],
+        correct: 3,
         explanation: '3,467 → the tens digit is 6 (≥5), so round up to 3,500.'
       },
       {
@@ -1021,8 +1021,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'What is 6,000 + 400 + 50 + 3 in standard form?',
-        options: ['6,453', '6,435', '6,543', '6,345'],
-        correct: 0,
+        options: ['6,543', '6,435', '6,453', '6,345'],
+        correct: 2,
         explanation: '6,000 + 400 + 50 + 3 = 6,453.'
       },
       {
@@ -1078,8 +1078,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A shop had 1,250 apples. It sold 875. How many apples are left?',
-        options: ['375', '475', '385', '365'],
-        correct: 0,
+        options: ['385', '475', '375', '365'],
+        correct: 2,
         explanation: '1,250 − 875 = 375 apples are left.'
       },
       {
@@ -1121,8 +1121,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the missing number: 3,456 + ___ = 5,000',
-        options: ['1,444', '1,544', '1,644', '1,554'],
-        correct: 1,
+        options: ['1,444', '1,554', '1,644', '1,544'],
+        correct: 3,
         explanation: '5,000 − 3,456 = 1,544.'
       },
       {
@@ -1187,8 +1187,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Find the difference: 9,001 − 8,999',
-        options: ['1', '2', '3', '10'],
-        correct: 1,
+        options: ['1', '10', '3', '2'],
+        correct: 3,
         explanation: '9,001 − 8,999 = 2.'
       }
     ],
@@ -1226,8 +1226,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'What is 15 × 6?',
-        options: ['80', '90', '85', '95'],
-        correct: 1,
+        options: ['90', '80', '85', '95'],
+        correct: 0,
         explanation: '15 × 6 = 90.'
       },
       {
@@ -1274,8 +1274,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A bus carries 50 passengers. How many passengers can 6 buses carry?',
-        options: ['250', '300', '350', '200'],
-        correct: 1,
+        options: ['300', '250', '350', '200'],
+        correct: 0,
         explanation: '50 × 6 = 300 passengers.'
       },
       {
@@ -1367,8 +1367,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Convert 2/4 to its simplest form.',
-        options: ['1/4', '1/2', '2/2', '4/2'],
-        correct: 1,
+        options: ['1/2', '1/4', '2/2', '4/2'],
+        correct: 0,
         explanation: '2/4 = 1/2 (divide both numerator and denominator by 2).'
       },
       {
@@ -1397,8 +1397,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which is greater: 2/5 or 3/5?',
-        options: ['2/5', '3/5', 'Both are equal', 'Cannot compare'],
-        correct: 1,
+        options: ['2/5', 'Both are equal', '3/5', 'Cannot compare'],
+        correct: 2,
         explanation: 'When denominators are same, the fraction with larger numerator is greater. 3/5 > 2/5.'
       },
       {
@@ -1460,8 +1460,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'What is the area of a rectangle with length 6 cm and width 4 cm?',
-        options: ['10 sq cm', '20 sq cm', '24 sq cm', '28 sq cm'],
-        correct: 2,
+        options: ['10 sq cm', '24 sq cm', '20 sq cm', '28 sq cm'],
+        correct: 1,
         explanation: 'Area of rectangle = length × width = 6 × 4 = 24 sq cm.'
       },
       {
@@ -1802,8 +1802,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'If today is Wednesday, what day will it be after 10 days?',
-        options: ['Friday', 'Saturday', 'Sunday', 'Monday'],
-        correct: 1,
+        options: ['Friday', 'Monday', 'Sunday', 'Saturday'],
+        correct: 3,
         explanation: '10 days = 1 week + 3 days. Wednesday + 3 days = Saturday.'
       },
       {
@@ -1825,7 +1825,7 @@ const QUESTION_BANK = {
         explanation: '4:00 PM + 2 hours 15 minutes = 6:15 PM.'
       },
       {
-        text: 'Anu has three ₹100 notes, two ₹50 notes, and five ₹10 coins. How much money does she have?',
+        text: 'Rujula has three ₹100 notes, two ₹50 notes, and five ₹10 coins. How much money does she have?',
         options: ['₹400', '₹450', '₹350', '₹500'],
         correct: 1,
         explanation: '3×₹100 = ₹300. 2×₹50 = ₹100. 5×₹10 = ₹50. Total = ₹300+₹100+₹50 = ₹450.'
@@ -2047,8 +2047,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'What is the outer covering of a fish called?',
-        options: ['Fur', 'Feathers', 'Scales', 'Shell'],
-        correct: 2,
+        options: ['Fur', 'Feathers', 'Shell', 'Scales'],
+        correct: 3,
         explanation: 'Fish have scales on their body that protect them and help them swim smoothly.'
       },
       {
@@ -2059,8 +2059,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Hibernation means:',
-        options: ['Moving to a warmer place', 'Sleeping through winter', 'Hunting at night', 'Living in water'],
-        correct: 1,
+        options: ['Moving to a warmer place', 'Hunting at night', 'Living in water', 'Sleeping through winter'],
+        correct: 3,
         explanation: 'Hibernation is a deep sleep during winter to save energy when food is scarce.'
       },
       {
@@ -2083,8 +2083,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which animal is known as the "Ship of the Desert"?',
-        options: ['Horse', 'Camel', 'Elephant', 'Donkey'],
-        correct: 1,
+        options: ['Horse', 'Donkey', 'Elephant', 'Camel'],
+        correct: 3,
         explanation: 'Camel is called the Ship of the Desert because it can travel long distances in deserts.'
       },
       {
@@ -2116,8 +2116,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which organ is used for breathing?',
-        options: ['Heart', 'Stomach', 'Lungs', 'Kidneys'],
-        correct: 2,
+        options: ['Heart', 'Stomach', 'Kidneys', 'Lungs'],
+        correct: 3,
         explanation: 'We use our lungs to breathe. They take in oxygen and release carbon dioxide.'
       },
       {
@@ -2284,8 +2284,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Scurvy is caused by the deficiency of:',
-        options: ['Vitamin A', 'Vitamin B', 'Vitamin C', 'Vitamin D'],
-        correct: 2,
+        options: ['Vitamin C', 'Vitamin B', 'Vitamin A', 'Vitamin D'],
+        correct: 0,
         explanation: 'Scurvy (bleeding gums, weakness) is caused by lack of Vitamin C. Found in citrus fruits.'
       },
       {
@@ -2344,8 +2344,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A balanced diet contains:',
-        options: ['Only proteins', 'Only carbohydrates', 'All nutrients in right amounts', 'Only vitamins'],
-        correct: 2,
+        options: ['Only proteins', 'Only carbohydrates', 'Only vitamins', 'All nutrients in right amounts'],
+        correct: 3,
         explanation: 'A balanced diet has all nutrients (carbohydrates, proteins, fats, vitamins, minerals, water) in proper amounts.'
       },
       {
@@ -2403,8 +2403,8 @@ const QUESTION_BANK = {
 
       {
         text: 'Which of these is a liquid?',
-        options: ['Ice', 'Steam', 'Water', 'Snow'],
-        correct: 2,
+        options: ['Ice', 'Steam', 'Snow', 'Water'],
+        correct: 3,
         explanation: 'Water is a liquid. Ice and snow are solid forms, and steam is the gas form of water.'
       },
       {
@@ -2475,8 +2475,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'Which material is a poor conductor of electricity?',
-        options: ['Copper', 'Iron', 'Rubber', 'Aluminium'],
-        correct: 2,
+        options: ['Rubber', 'Iron', 'Copper', 'Aluminium'],
+        correct: 0,
         explanation: 'Rubber is a poor conductor (insulator) of electricity. Metals are good conductors.'
       },
       {
@@ -2564,8 +2564,8 @@ const QUESTION_BANK = {
       },
       {
         text: 'A see-saw is an example of:',
-        options: ['Pulley', 'Lever', 'Inclined plane', 'Screw'],
-        correct: 1,
+        options: ['Pulley', 'Screw', 'Inclined plane', 'Lever'],
+        correct: 3,
         explanation: 'A see-saw is a lever — it has a fulcrum (pivot point) in the middle.'
       },
       {
